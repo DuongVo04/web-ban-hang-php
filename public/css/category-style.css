@@ -1,0 +1,189 @@
+/* Reset và biến toàn cục */
+:root {
+  --primary-color: #3498db;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --text-color: #2c3e50;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout chung */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: var(--bg-gradient);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+h1 {
+  color: var(--text-color);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Component card */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 30px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Form elements */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+label {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(52,152,219,0.3);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: separate; /* Thay đổi từ 'collapse' sang 'separate' */
+  border-spacing: 0; /* Đảm bảo không có khoảng cách giữa các ô */
+  background: white;
+  border-radius: 10px; /* Bo tròn góc của bảng */
+  overflow: hidden; /* Ẩn phần nội dung vượt ra ngoài góc bo tròn */
+}
+
+.category-table th,
+.category-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+.table-wrapper {
+  border-radius: 10px; /* Bo tròn góc của bảng */
+  overflow: hidden; /* Ẩn phần nội dung vượt ra ngoài góc bo tròn */
+  box-shadow: var(--shadow-md); /* Thêm bóng nếu cần */
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.category-table th,
+.category-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.category-table th {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.category-table tr {
+  transition: var(--transition);
+}
+
+.category-table tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+/* Button system */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  color: white;
+}
+
+.btn-back { background: #95a5a6 }
+.btn-submit { background: var(--success-color) }
+.btn-edit { background: var(--warning-color) }
+.btn-delete { background: var(--danger-color) }
+.btn-primary { background: var(--primary-color) }
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Utility classes */
+.form-actions { justify-content: flex-end }
+.action-buttons { display: flex; gap: 10px }
+.mb-25 { margin-bottom: 25px }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container { padding: 15px }
+  
+  .header-section {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .card { padding: 20px }
+  
+  .category-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
